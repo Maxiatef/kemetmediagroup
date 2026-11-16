@@ -79,3 +79,45 @@ export function Eyebrow({ children, dark = false }: { children: React.ReactNode;
     </span>
   );
 }
+
+export function SocialIcon({ name, className = "size-[18px]" }: { name: string; className?: string }) {
+  switch (name) {
+    case "Instagram":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4.2" />
+          <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case "Facebook":
+      return (
+        <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+          <path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6H17V4.3c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.4H7.8V14h2.7v8h3Z" />
+        </svg>
+      );
+    case "TikTok":
+      return (
+        <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+          <path d="M16.6 2.5c.4 2.4 1.9 3.9 4.2 4.1v3.3c-1.6 0-3-.5-4.2-1.3v6.3a6.4 6.4 0 1 1-6.4-6.4c.3 0 .6 0 .9.1v3.4a3.1 3.1 0 1 0 2.2 3V2.5h3.3Z" />
+        </svg>
+      );
+    case "YouTube":
+      return (
+        <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+          <path
+            fillRule="evenodd"
+            d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.6 2.6 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3L10 15Z"
+          />
+        </svg>
+      );
+    case "X":
+      return (
+        <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+          <path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.5l11.2 14.5Z" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}

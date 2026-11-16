@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { useLenis } from "lenis/react";
 import { contact, nav, services, socials } from "@/lib/data";
-import { Arrow } from "./ui";
+import { Arrow, SocialIcon } from "./ui";
 
 export default function Footer() {
   const lenis = useLenis();
@@ -65,9 +65,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={s.label}
-                  className="grid size-11 place-items-center rounded-full bg-white/10 text-[12px] font-medium text-white/80 transition-colors hover:bg-white hover:text-ink"
+                  className="grid size-11 place-items-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-white hover:text-ink"
                 >
-                  {s.short}
+                  <SocialIcon name={s.label} />
                 </a>
               ))}
             </div>

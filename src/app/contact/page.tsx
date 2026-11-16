@@ -3,6 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
 import { Reveal } from "@/components/motion";
 import { contact, socials } from "@/lib/data";
+import { SocialIcon } from "@/components/ui";
 
 export const metadata: Metadata = { title: "Contact" };
 
@@ -49,8 +50,9 @@ export default function ContactPage() {
                   href={s.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full bg-chip px-4 py-2 text-[14px] transition-colors hover:bg-ink hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-full bg-chip px-4 py-2 text-[14px] transition-colors hover:bg-ink hover:text-white"
                 >
+                  <SocialIcon name={s.label} className="size-4" />
                   {s.label}
                 </a>
               ))}
