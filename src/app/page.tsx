@@ -5,9 +5,12 @@ import ServiceList from "@/components/ServiceList";
 import ProcessCards from "@/components/ProcessCards";
 import ZoomReel from "@/components/ZoomReel";
 import Marquee from "@/components/Marquee";
-import { Reveal, WordReveal, CountUp } from "@/components/motion";
+import BigTitle from "@/components/BigTitle";
+import Bento from "@/components/home/Bento";
+import Faq from "@/components/Faq";
+import { Reveal, WordReveal } from "@/components/motion";
 import { PillButton, Eyebrow } from "@/components/ui";
-import { gallery, process, projects, reasons, stats } from "@/lib/data";
+import { gallery, process, projects, reasons } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -15,7 +18,7 @@ export default function Home() {
       <Hero />
 
       {/* Intro statement */}
-      <section className="container-x py-28 sm:py-40">
+      <section className="container-x pb-10 pt-28 sm:pt-40">
         <div className="grid gap-10 lg:grid-cols-[220px_1fr]">
           <Reveal>
             <Eyebrow>Kemet</Eyebrow>
@@ -25,24 +28,25 @@ export default function Home() {
               className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,3.8vw,3.6rem)] font-semibold leading-[1.08] tracking-[-0.035em]"
               text="Kemet Marketing Solutions transforms how businesses in the USA and the Gulf region grow — through data, creativity, and automation. From digital to traditional channels, we blend strategy, technology and human insight to drive measurable results."
             />
-            <div className="mt-16 grid gap-10 border-t border-line pt-10 sm:grid-cols-3">
-              {stats.map((s, i) => (
-                <Reveal key={s.label} delay={i * 0.08}>
-                  <CountUp to={s.value} suffix={s.suffix} className="display text-[clamp(3rem,5vw,4.5rem)]" />
-                  <p className="mt-2 text-[15px] text-mute">{s.label}</p>
-                </Reveal>
-              ))}
-            </div>
           </div>
         </div>
+        {/* NEW (SpartanAI vibe): bento stat cards */}
+        <div className="mt-16 sm:mt-20">
+          <Bento />
+        </div>
       </section>
+
+      {/* NEW (SpartanAI vibe): giant drifting title */}
+      <BigTitle word="Our Work" />
 
       {/* Featured work — stacking cards */}
       <section className="pb-10">
         <div className="container-x flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="eyebrow mb-4">Featured work · ({projects.length})</p>
-            <WordReveal text="Excellence in creative work" className="h2 max-w-[12ch]" />
+            <p className="max-w-md text-[17px] leading-relaxed text-ink-2/80">
+              Excellence in creative work — websites, campaigns and content built for measurable growth.
+            </p>
           </div>
           <Reveal>
             <PillButton href="/work" variant="light">
@@ -105,6 +109,20 @@ export default function Home() {
               </div>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* NEW (SpartanAI vibe): FAQ */}
+      <section className="container-x pb-28 sm:pb-40">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <p className="eyebrow mb-4">Common questions</p>
+            <WordReveal text="Everything you need to know." className="h2 max-w-[11ch]" />
+            <Reveal className="mt-8">
+              <PillButton href="/contact">Ask us anything</PillButton>
+            </Reveal>
+          </div>
+          <Faq />
         </div>
       </section>
     </>

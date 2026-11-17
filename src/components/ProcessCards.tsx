@@ -35,8 +35,9 @@ function CtaCard({ progress, total }: { progress: MotionValue<number>; total: nu
   const start = 0.75 * (total / (total + 1));
   const y = useTransform(progress, [start, 0.95], ["110%", "0%"]);
   const rotate = useTransform(progress, [start, 0.95], [6, 0]);
+  const opacity = useTransform(progress, [start, start + 0.12], [0, 1]);
   return (
-    <motion.article style={{ y, rotate }} className="flex h-full flex-col rounded-[28px] bg-white p-3 ring-1 ring-line">
+    <motion.article style={{ y, rotate, opacity }} className="flex h-full flex-col rounded-[28px] bg-white p-3 ring-1 ring-line">
       <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-paper grid-bg">
         <div className="absolute left-1/2 top-1/2 aspect-square w-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_35%_30%,#ffb489,#ff5b14_55%,#c73d00)] shadow-[0_30px_60px_rgba(255,91,20,0.35)]" />
       </div>
