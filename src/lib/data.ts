@@ -410,11 +410,11 @@ export const values = [
 ];
 
 export const team = [
-  { name: "George Wahba", role: "Founder & CEO", image: "/img/george.png" },
-  { name: "Andrew Salib", role: "Technology Lead" },
-  { name: "Beshoy Sabry", role: "Data Analyst Lead" },
-  { name: "Andrew Nashaat", role: "Marketing Strategist" },
-  { name: "Abanoub Mounir", role: "Art & Creative Lead" },
+  { name: "George Wahba", role: "Founder & CEO", image: "/img/team/george.webp" },
+  { name: "Andrew Salib", role: "Technology Lead", image: "/img/team/andrew-salib.webp" },
+  { name: "Beshoy Sabry", role: "Data Analyst Lead", image: "/img/team/beshoy-sabry.webp" },
+  { name: "Andrew Nashaat", role: "Marketing Strategist", image: "/img/team/andrew-nashaat.webp" },
+  { name: "Abanoub Mounir", role: "Art & Creative Lead", image: "/img/team/abanoub-mounir.webp" },
 ];
 
 export const stats = [

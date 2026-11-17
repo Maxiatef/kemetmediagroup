@@ -89,14 +89,14 @@ export default function AboutPage() {
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {team.map((m, i) => (
             <Reveal key={m.name} delay={i * 0.06} className="group">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-[linear-gradient(160deg,#ffffff,#e4e4e0)] ring-1 ring-line">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-[#0e0e0e]">
                 {m.image ? (
                   <Image
                     src={m.image}
                     alt={m.name}
                     fill
                     sizes="(min-width: 1024px) 20vw, 50vw"
-                    className="object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                    className="object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-105"
                   />
                 ) : (
                   <div className="absolute inset-0 grid place-items-center">
